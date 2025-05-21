@@ -1,3 +1,10 @@
+import BlogList from '@/components/blog-list';
+import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
+
 export default function BlogPage() {
-  return <div>BlogPage</div>;
+  return (
+    <MaxWidthWrapper>
+      <BlogList />
+    </MaxWidthWrapper>
+  );
 }

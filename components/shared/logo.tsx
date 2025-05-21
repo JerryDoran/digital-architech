@@ -9,8 +9,9 @@ export default function Logo() {
         alt='Digital Architech Logo'
         width={40}
         height={40}
+        className='w-8 h-8 md:w-10 md:h-10'
       />
-      <h1 className='text-xl font-bold'>The Digital Architech</h1>
+      <h1 className='md:text-xl font-bold'>The Digital Architech</h1>
     </div>
   );
 }
