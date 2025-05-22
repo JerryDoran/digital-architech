@@ -25,7 +25,7 @@ export default function Header() {
             <Link href='/about'>About</Link>
           </li>
           <li className='transition-colors hover:bg-accent py-1.5 px-3 rounded-md'>
-            <Link href='/blog'>Blog</Link>
+            <Link href='/blogs'>Blogs</Link>
           </li>
           <li className='transition-colors hover:bg-accent py-1.5 px-3 rounded-md mr-4'>
             <Link href='/contact'>Contact</Link>
@@ -42,7 +42,7 @@ export default function Header() {
             <li className=''>
               <Link
                 href='/register'
-                className={buttonVariants({ variant: 'outline' })}
+                className={buttonVariants({ variant: 'default' })}
               >
                 Register
               </Link>

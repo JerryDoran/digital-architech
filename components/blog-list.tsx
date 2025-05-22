@@ -1,38 +1,125 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Image from 'next/image';
+import Link from 'next/link';
+import { buttonVariants } from './ui/button';
 
 type Blog = {
   slug: string;
   title: string;
   description: string;
   date: string;
-  imageUrl: string;
+  imageUrl?: string;
 };
 
 const blogs: Blog[] = [
   {
-    slug: '1',
+    slug: 'javascript',
     title: 'Understanding React Hooks',
-    description:
-      'A deep dive into useState, useEffect, and custom hooks in React.',
+    description: `Learn how to harness the power of **React Hooks** like \`useState\`, \`useEffect\`, and even create your own **custom hooks**.
+
+Key topics covered:
+- State management with \`useState\`
+- Side effects using \`useEffect\`
+- Extracting logic with custom hooks
+
+> Hooks simplify your components and eliminate class-based boilerplate.`,
     date: 'May 18, 2025',
-    imageUrl: 'https://picsum.photos/600/400',
+    imageUrl: 'https://picsum.photos/id/240/600/400',
   },
   {
-    slug: '2',
+    slug: 'html',
     title: 'Tailwind CSS for Beginners',
-    description:
-      'Learn how to style modern UIs using Tailwind CSS utility classes.',
+    description: `Discover how to style your UI using **Tailwind CSS** utility classes. No more fighting with custom stylesheets!
+
+What you'll learn:
+- How utility-first CSS works
+- Responsive design with Tailwind
+- Building reusable components
+
+\`\`\`html
+<div className="p-4 bg-gray-100 rounded-md">
+  Tailwind makes this easy!
+</div>
+\`\`\`
+
+Tailwind lets you **build fast** and **style with confidence**.`,
     date: 'May 14, 2025',
-    imageUrl: 'https://picsum.photos/600/400',
+    imageUrl: 'https://picsum.photos/id/237/600/400',
   },
   {
-    slug: '3',
+    slug: 'top-5-programming-languages',
     title: 'JavaScript ES2025 Features',
-    description: 'Check out what’s new in the latest version of JavaScript.',
+    description: `Discover how to style your UI using **Tailwind CSS** utility classes. No more fighting with custom stylesheets!
+
+What you'll learn:
+- How utility-first CSS works
+- Responsive design with Tailwind
+- Building reusable components
+
+\`\`\`html
+<div className="p-4 bg-gray-100 rounded-md">
+  Tailwind makes this easy!
+</div>
+\`\`\`
+
+Tailwind lets you **build fast** and **style with confidence**.`,
     date: 'May 10, 2025',
-    imageUrl: 'https://picsum.photos/600/400',
+    imageUrl: 'https://picsum.photos/id/238/600/400',
+  },
+  {
+    slug: '4',
+    title: 'Understanding React Hooks',
+    description: `Learn how to harness the power of **React Hooks** like \`useState\`, \`useEffect\`, and even create your own **custom hooks**.
+
+Key topics covered:
+- State management with \`useState\`
+- Side effects using \`useEffect\`
+- Extracting logic with custom hooks
+
+> Hooks simplify your components and eliminate class-based boilerplate.`,
+    date: 'May 18, 2025',
+    imageUrl: 'https://picsum.photos/id/24/600/400',
+  },
+  {
+    slug: '5',
+    title: 'Tailwind CSS for Beginners',
+    description: `Discover how to style your UI using **Tailwind CSS** utility classes. No more fighting with custom stylesheets!
+
+What you'll learn:
+- How utility-first CSS works
+- Responsive design with Tailwind
+- Building reusable components
+
+\`\`\`html
+<div className="p-4 bg-gray-100 rounded-md">
+  Tailwind makes this easy!
+</div>
+\`\`\`
+
+Tailwind lets you **build fast** and **style with confidence**.`,
+    date: 'May 14, 2025',
+    imageUrl: 'https://picsum.photos/id/247/600/400',
+  },
+  {
+    slug: '6',
+    title: 'JavaScript ES2025 Features',
+    description: `Discover how to style your UI using **Tailwind CSS** utility classes. No more fighting with custom stylesheets!
+
+What you'll learn:
+- How utility-first CSS works
+- Responsive design with Tailwind
+- Building reusable components
+
+\`\`\`html
+<div className="p-4 bg-gray-100 rounded-md">
+  Tailwind makes this easy!
+</div>
+\`\`\`
+
+Tailwind lets you **build fast** and **style with confidence**.`,
+    date: 'May 10, 2025',
+    imageUrl: 'https://picsum.photos/id/239/600/400',
   },
 ];
 
@@ -45,11 +132,11 @@ export default function BlogList() {
         {blogs.map((blog) => (
           <Card
             key={blog.slug}
-            className='overflow-hidden rounded-2xl shadow hover:shadow-lg transition-shadow duration-300'
+            className='overflow-hidden rounded-2xl shadow hover:shadow-lg transition-shadow duration-300 py-0'
           >
-            <div className='relative h-48 w-full'>
+            <CardHeader className='relative h-56 overflow-hidden '>
               <Image
-                src={blog.imageUrl}
+                src={blog.imageUrl ?? '/default-blog.jpg'}
                 alt={blog.title}
                 fill
                 className='object-cover'
@@ -58,12 +145,22 @@ export default function BlogList() {
                        33vw'
                 priority
               />
-            </div>
+            </CardHeader>
 
-            <CardContent className='p-4'>
-              <h3 className='text-xl font-semibold mb-1'>{blog.title}</h3>
-              <p className='text-xs mb-3'>{blog.date}</p>
-              <p className='text-sm'>{blog.description}</p>
+            <CardContent className='p-4 flex flex-col justify-between gap-4 '>
+              <div className=''>
+                <h3 className='text-xl font-semibold mb-1'>{blog.title}</h3>
+                <p className='text-xs mb-4'>{blog.date}</p>
+                <p className='text-sm line-clamp-3 mb-2'>{blog.description}</p>
+              </div>
+
+              <Link
+                href={`/blogs/${blog.slug}`}
+                className={buttonVariants({ variant: 'default' })}
+                style={{ width: '30%' }}
+              >
+                Read More
+              </Link>
             </CardContent>
           </Card>
         ))}
