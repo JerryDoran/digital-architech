@@ -10,6 +10,7 @@ import { transformerCopyButton } from '@rehype-pretty/transformers';
 import matter from 'gray-matter';
 import fs from 'fs';
 import OnThisPage from '@/components/on-this-page';
+import path from 'path';
 
 type Params = Promise<{ slug: string }>;
 
@@ -35,7 +36,11 @@ export default async function BlogPage({ params }: { params: Params }) {
       ],
     });
 
-  const filePath = `content/${slug}.md`;
+  // await fs.readFile(path.resolve("src/path/to/file/file.js"), "utf8",)
+  // path.join(process.cwd(), 'posts')
+
+  // const filePath = `content/${slug}.md`;
+  const filePath = path.join(process.cwd(), `content/${slug}.md`);
   const fileContent = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContent);
 
