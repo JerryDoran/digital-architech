@@ -14,7 +14,7 @@ import {
 
 export default function Header() {
   return (
-    <header className='flex items-center justify-between h-16 sticky top-0 border-b bg-background/50 px-4 backdrop-blur-sm'>
+    <header className='flex items-center justify-between h-16 sticky top-0 border-b bg-background/50 backdrop-blur-sm px-6 z-10'>
       <Logo />
       <nav className='flex items-center gap-4'>
         <ul className='hidden lg:flex items-center text-sm'>

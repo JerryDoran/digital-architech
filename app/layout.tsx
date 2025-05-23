@@ -32,7 +32,7 @@ export default function RootLayout({
       className='scroll-p-20 scroll-smooth'
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased px-4 xl:px-0`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <ThemeProvider
           attribute='class'

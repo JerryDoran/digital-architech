@@ -43,16 +43,12 @@ export default function Home() {
               with simplicity, efficiency, and ease.
             </p>
             <div className='mt-6 bg-transparent border rounded-lg dark:border-gray-700 lg:w-2/3 focus-within:border-primary focus-within:ring focus-within:ring-primary dark:focus-within:border-primary focus-within:ring-opacity-20'>
-              <form
-                action='https://www.creative-tim.com/twcomponents/search'
-                className=''
-              >
+              <form action='' className=''>
                 <div className='flex'>
                   <Input
-                    type='search'
-                    name='query'
+                    type='email'
+                    name='email'
                     placeholder='email@example.com'
-                    required={true}
                     className=' text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none  dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0'
                   />
                   <Button
@@ -70,13 +66,13 @@ export default function Home() {
               Enter your email to subscribe
             </p>
           </div>{' '}
-          <div className='w-full mt-4 lg:mt-0 lg:w-1/2'>
+          <div className='w-full mt-6 lg:mt-0 lg:w-1/2'>
             <Image
               src={hero}
               alt='tailwind css components'
               width={500}
               height={300}
-              className='rounded-lg shadow-lg mx-auto hover:scale-110 duration-500 w-auto'
+              className='rounded-lg shadow-lg mx-auto hover:scale-105 duration-500 w-auto'
             />
           </div>
         </section>
@@ -86,12 +82,12 @@ export default function Home() {
       <section className='text-gray-600 dark:text-gray-50 body-font dark:bg-white/10 bg-gray-100'>
         <MaxWidthWrapper>
           <div className='container px-5 py-24 mx-auto'>
-            <h2 className='text-4xl md:text-5xl pb-8 mb-4 font-bold  text-center'>
+            <h2 className='text-4xl md:text-5xl pb-8 mb-4 font-bold text-center'>
               About My Services
             </h2>
             <div className='flex flex-wrap -m-4'>
               <div className='p-4 lg:w-1/3'>
-                <div className='h-full bg-white dark:bg-gray-900 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative shadow-lg hover:scale-105 duration-500'>
+                <div className='h-full bg-white dark:bg-gray-900 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative shadow-lg hover:scale-105 duration-500 dark:border dark:border-gray-700'>
                   <h2 className='tracking-widest text-xs title-font font-medium  mb-1'>
                     WEB DEVELOPMENT
                   </h2>
@@ -151,7 +147,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='p-4 lg:w-1/3'>
-                <div className='h-full bg-white dark:bg-gray-900 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative shadow-lg hover:scale-105 duration-500'>
+                <div className='h-full bg-white dark:bg-gray-900 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative shadow-lg hover:scale-105 duration-500 dark:border dark:border-gray-700'>
                   <h2 className='tracking-widest text-xs title-font font-medium  mb-1'>
                     MOBILE DEVELOPMENT
                   </h2>
@@ -211,7 +207,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='p-4 lg:w-1/3'>
-                <div className='h-full bg-white dark:bg-gray-900 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative shadow-lg hover:scale-105 duration-500'>
+                <div className='h-full bg-white dark:bg-gray-900 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative shadow-lg hover:scale-105 duration-500 dark:border dark:border-gray-700'>
                   <h2 className='tracking-widest text-xs title-font font-medium  mb-1'>
                     CLOUD SOLUTIONS
                   </h2>
