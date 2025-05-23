@@ -5,16 +5,18 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
+import { transformerCopyButton } from '@rehype-pretty/transformers';
 import matter from 'gray-matter';
 import fs from 'fs';
 import OnThisPage from '@/components/on-this-page';
 
-export default async function BlogPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  // const { slug } = params;
+type BlogPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function BlogPage({ params }: BlogPageProps) {
+  const { slug } = await params;
 
   // https://ondrejsevcik.com/blog/building-perfect-markdown-processor-for-my-blog
   const processor = unified()
@@ -24,9 +26,18 @@ export default async function BlogPage({
     })
     .use(rehypeStringify)
     .use(rehypeAutolinkHeadings)
-    .use(rehypeSlug);
+    .use(rehypeSlug)
+    .use(rehypePrettyCode, {
+      theme: 'github-dark',
+      transformers: [
+        transformerCopyButton({
+          visibility: 'always',
+          feedbackDuration: 3_000,
+        }),
+      ],
+    });
 
-  const filePath = `content/${params.slug}.md`;
+  const filePath = `content/${slug}.md`;
   const fileContent = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContent);
 
