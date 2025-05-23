@@ -14,7 +14,7 @@ export default async function BlogPage({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = params;
+  // const { slug } = params;
 
   // https://ondrejsevcik.com/blog/building-perfect-markdown-processor-for-my-blog
   const processor = unified()
