@@ -77,6 +77,9 @@ dependencies:
   tailwind-merge:
     specifier: ^3.3.0
     version: 3.3.0
+  typed.js:
+    specifier: ^2.1.0
+    version: 2.1.0
   unified:
     specifier: ^11.0.5
     version: 11.0.5
@@ -4808,6 +4811,10 @@ packages:
       possible-typed-array-names: 1.1.0
       reflect.getprototypeof: 1.0.10
     dev: true
+
+  /typed.js@2.1.0:
+    resolution: {integrity: sha512-bDuXEf7YcaKN4g08NMTUM6G90XU25CK3bh6U0THC/Mod/QPKlEt9g/EjvbYB8x2Qwr2p6J6I3NrsoYaVnY6wsQ==}
+    dev: false
 
   /typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}

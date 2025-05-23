@@ -14,7 +14,7 @@ type Blog = {
 
 const blogs: Blog[] = [
   {
-    slug: 'javascript',
+    slug: 'javascript-tutorial',
     title: 'Understanding React Hooks',
     description: `Learn how to harness the power of **React Hooks** like \`useState\`, \`useEffect\`, and even create your own **custom hooks**.
 
@@ -66,60 +66,6 @@ What you'll learn:
 Tailwind lets you **build fast** and **style with confidence**.`,
     date: 'May 10, 2025',
     imageUrl: 'https://picsum.photos/id/238/600/400',
-  },
-  {
-    slug: '4',
-    title: 'Understanding React Hooks',
-    description: `Learn how to harness the power of **React Hooks** like \`useState\`, \`useEffect\`, and even create your own **custom hooks**.
-
-Key topics covered:
-- State management with \`useState\`
-- Side effects using \`useEffect\`
-- Extracting logic with custom hooks
-
-> Hooks simplify your components and eliminate class-based boilerplate.`,
-    date: 'May 18, 2025',
-    imageUrl: 'https://picsum.photos/id/24/600/400',
-  },
-  {
-    slug: '5',
-    title: 'Tailwind CSS for Beginners',
-    description: `Discover how to style your UI using **Tailwind CSS** utility classes. No more fighting with custom stylesheets!
-
-What you'll learn:
-- How utility-first CSS works
-- Responsive design with Tailwind
-- Building reusable components
-
-\`\`\`html
-<div className="p-4 bg-gray-100 rounded-md">
-  Tailwind makes this easy!
-</div>
-\`\`\`
-
-Tailwind lets you **build fast** and **style with confidence**.`,
-    date: 'May 14, 2025',
-    imageUrl: 'https://picsum.photos/id/247/600/400',
-  },
-  {
-    slug: '6',
-    title: 'JavaScript ES2025 Features',
-    description: `Discover how to style your UI using **Tailwind CSS** utility classes. No more fighting with custom stylesheets!
-
-What you'll learn:
-- How utility-first CSS works
-- Responsive design with Tailwind
-- Building reusable components
-
-\`\`\`html
-<div className="p-4 bg-gray-100 rounded-md">
-  Tailwind makes this easy!
-</div>
-\`\`\`
-
-Tailwind lets you **build fast** and **style with confidence**.`,
-    date: 'May 10, 2025',
-    imageUrl: 'https://picsum.photos/id/239/600/400',
   },
 ];
 

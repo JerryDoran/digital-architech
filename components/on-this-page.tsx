@@ -33,7 +33,7 @@ export default function OnThisPage({ htmlContent }: { htmlContent: string }) {
   return (
     <div className='hidden md:flex md:flex-col w-full text-sm'>
       <div className='sticky top-20'>
-        <h2 className='font-bold mb-4'>On this page</h2>
+        <h2 className='font-bold text-sm mb-4'>On this page</h2>
         <ul className='list-none not-prose space-y-2'>
           {links &&
             links.map((link) => (
