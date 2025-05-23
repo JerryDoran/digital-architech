@@ -11,11 +11,9 @@ import matter from 'gray-matter';
 import fs from 'fs';
 import OnThisPage from '@/components/on-this-page';
 
-type BlogPageProps = {
-  params: Promise<{ slug: string }>;
-};
+type Params = Promise<{ slug: string }>;
 
-export default async function BlogPage({ params }: BlogPageProps) {
+export default async function BlogPage({ params }: { params: Params }) {
   const { slug } = await params;
 
   // https://ondrejsevcik.com/blog/building-perfect-markdown-processor-for-my-blog
