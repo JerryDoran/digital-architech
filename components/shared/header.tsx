@@ -46,7 +46,7 @@ export default function Header() {
       />
       <Logo />
       <nav className='flex items-center gap-4'>
-        <ul className='hidden lg:flex items-center text-sm'>
+        <ul className='hidden md:flex items-center text-sm'>
           <li className='transition-colors hover:bg-accent py-1.5 px-3 rounded-md'>
             <Link href='/'>Home</Link>
           </li>
@@ -59,7 +59,7 @@ export default function Header() {
           <li className='transition-colors hover:bg-accent py-1.5 px-3 rounded-md mr-4'>
             <Link href='/contact'>Contact</Link>
           </li>
-          <div className='flex items-center gap-3'>
+          {/* <div className='flex items-center gap-3'>
             <li className=''>
               <Link
                 href='/login'
@@ -76,13 +76,13 @@ export default function Header() {
                 Register
               </Link>
             </li>
-          </div>
+          </div> */}
         </ul>
         <ThemeToggle />
 
         <Sheet>
           <SheetTrigger>
-            <Menu className='lg:hidden cursor-pointer' />
+            <Menu className='md:hidden cursor-pointer' />
           </SheetTrigger>
           <SheetContent>
             <SheetHeader>

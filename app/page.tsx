@@ -42,7 +42,7 @@ export default function Home() {
               Smart, simple tech tips to help your small business thrive online
               with simplicity, efficiency, and ease.
             </p>
-            <div className='mt-6 bg-transparent border rounded-lg dark:border-gray-700 lg:w-2/3 focus-within:border-primary focus-within:ring focus-within:ring-primary dark:focus-within:border-primary focus-within:ring-opacity-20'>
+            {/* <div className='mt-6 bg-transparent border rounded-lg dark:border-gray-700 lg:w-2/3 focus-within:border-primary focus-within:ring focus-within:ring-primary dark:focus-within:border-primary focus-within:ring-opacity-20'>
               <form action='' className=''>
                 <div className='flex'>
                   <Input
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
             <p className='text-xs text-left mt-2'>
               Enter your email to subscribe
-            </p>
+            </p> */}
           </div>{' '}
           <div className='w-full mt-6 lg:mt-0 lg:w-1/2'>
             <Image

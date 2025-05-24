@@ -93,11 +93,11 @@ export default function BlogList({ blogs }: { blogs: BlogProps[] }) {
               />
             </CardHeader>
 
-            <CardContent className='p-4 flex flex-col justify-between gap-4 '>
+            <CardContent className='p-4 flex flex-col justify-between gap-4 h-[50%]'>
               <div className=''>
                 <h3 className='text-xl font-semibold mb-1'>{blog.title}</h3>
                 <p className='text-xs mb-4'>{blog.date}</p>
-                <p className='text-sm line-clamp-3 mb-2'>{blog.description}</p>
+                <p className='text-sm line-clamp-2 mb-2'>{blog.description}</p>
               </div>
 
               <Link
