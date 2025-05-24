@@ -1,4 +1,10 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import LoadingBar from 'react-top-loading-bar';
+
 import Logo from '@/components/shared/logo';
 import { buttonVariants } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/shared/theme-toggle';
@@ -13,8 +19,31 @@ import {
 } from '@/components/ui/sheet';
 
 export default function Header() {
+  const [progess, setProgress] = useState(0);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setProgress(30);
+    setTimeout(() => {
+      setProgress(70);
+    }, 100);
+    setTimeout(() => {
+      setProgress(100);
+    }, 700);
+  }, [pathname]);
+
+  useEffect(() => {
+    setProgress(0);
+  }, []);
+
   return (
     <header className='flex items-center justify-between h-16 sticky top-0 border-b bg-background/50 backdrop-blur-sm px-6 z-10'>
+      <LoadingBar
+        color='#fbbf24'
+        height={3}
+        progress={progess}
+        onLoaderFinished={() => setProgress(0)}
+      />
       <Logo />
       <nav className='flex items-center gap-4'>
         <ul className='hidden lg:flex items-center text-sm'>

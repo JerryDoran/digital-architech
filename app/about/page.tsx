@@ -3,8 +3,8 @@ import Image from 'next/image';
 export default function AboutPage() {
   return (
     <div>
-      <div className='flex flex-col items-center justify-center py-32 bg-gray-100 '>
-        <div className='w-full max-w-4xl p-8 bg-white shadow-lg rounded-lg'>
+      <div className='flex flex-col items-center justify-center py-32'>
+        <div className='w-full max-w-4xl p-8 shadow-lg rounded-lg'>
           <div className='flex flex-col md:flex-row'>
             <div className='w-full md:w-1/3 flex justify-center items-center mb-8 md:mb-0'>
               <div className='relative w-48 h-48 rounded-full overflow-hidden'>
@@ -18,10 +18,10 @@ export default function AboutPage() {
               </div>
             </div>
             <div className='w-full md:w-2/3 flex flex-col justify-center'>
-              <h1 className='text-4xl font-bold text-gray-800 mb-4'>
+              <h1 className='text-4xl font-bold dark:text-gray-200 text-gray-800 mb-4'>
                 About Me
               </h1>
-              <p className='text-gray-600 text-lg mb-4'>
+              <p className='text-gray-600 text-lg mb-4 dark:text-gray-400'>
                 Hello! I&apos;m Jerry, a passionate software developer and tech
                 enthusiast. I created this blog to share my experiences, tips,
                 and years of experience with technologies to help small
@@ -29,7 +29,7 @@ export default function AboutPage() {
                 journey, and I&apos;m here to help small businesses master the
                 art of successfully integrating technology into their business.
               </p>
-              <p className='text-gray-600 text-lg'>
+              <p className='text-gray-600 text-lg dark:text-gray-400'>
                 Whether you&apos;re just starting out to understand how a
                 website can help your business or looking to enhance your tech
                 or marketing skills, you&apos;ll find a variety of resources and

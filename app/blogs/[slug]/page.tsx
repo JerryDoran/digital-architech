@@ -8,9 +8,34 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import { transformerCopyButton } from '@rehype-pretty/transformers';
 import matter from 'gray-matter';
-import fs from 'fs';
 import OnThisPage from '@/components/on-this-page';
+import fs from 'fs';
 import path from 'path';
+import { Metadata, ResolvingMetadata } from 'next';
+
+type Props = {
+  params: {
+    slug: string;
+    title: string;
+    description: string;
+  };
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = params.slug;
+
+  const filePath = path.join(process.cwd(), `content/${slug}.md`);
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  const { data } = matter(fileContent);
+
+  return {
+    title: `The Digital Architech | ${data.title}`,
+    description: data.description,
+  };
+}
 
 type Params = Promise<{ slug: string }>;
 
@@ -39,7 +64,6 @@ export default async function BlogPage({ params }: { params: Params }) {
   // await fs.readFile(path.resolve("src/path/to/file/file.js"), "utf8",)
   // path.join(process.cwd(), 'posts')
 
-  // const filePath = `content/${slug}.md`;
   const filePath = path.join(process.cwd(), `content/${slug}.md`);
   const fileContent = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContent);
