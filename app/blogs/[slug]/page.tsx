@@ -20,12 +20,14 @@ type Props = {
     description: string;
   };
 };
+type Params = Promise<{ slug: string }>;
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const slug = params.slug;
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> {
+  const { slug } = await params;
 
   const filePath = path.join(process.cwd(), `content/${slug}.md`);
   const fileContent = fs.readFileSync(filePath, 'utf8');
@@ -36,8 +38,6 @@ export async function generateMetadata(
     description: data.description,
   };
 }
-
-type Params = Promise<{ slug: string }>;
 
 export default async function BlogPage({ params }: { params: Params }) {
   const { slug } = await params;
