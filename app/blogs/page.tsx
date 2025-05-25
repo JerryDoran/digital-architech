@@ -26,6 +26,7 @@ export default function BlogPage() {
       description: data.description,
       date: data.date,
       imageUrl: data.imageUrl,
+      tags: data.tags ?? [],
     };
   });
 

@@ -4,6 +4,7 @@ slug: html
 description: Comprehensive guide on learning HTML, from the basics of structuring web pages to advanced elements and semantics.
 date: May 2, 2025
 imageUrl: https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=600
+tags: ['technology', 'marketing']
 ---
 
 Welcome to this comprehensive HTML tutorial! This guide will help you understand the fundamentals of HTML (HyperText Markup Language) and teach you how to create well-structured web pages. Whether you’re a complete beginner or looking to refine your skills, this tutorial covers everything from the basics to advanced topics.

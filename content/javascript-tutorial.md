@@ -4,6 +4,7 @@ slug: javascript-tutorial
 description: Comprehensive guide on learning JavaScript, from the basics of syntax and functions to advanced topics like asynchronous programming and frameworks.
 date: May 22, 2025
 imageUrl: https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=600
+tags: ['website', 'mobile', 'design']
 ---
 
 Welcome to this comprehensive JavaScript tutorial! Whether you're new to programming or looking to enhance your skills, this guide will cover everything from the basics of JavaScript syntax to more advanced concepts and techniques.
