@@ -20,6 +20,7 @@ import {
 
 export default function Header() {
   const [progess, setProgress] = useState(0);
+  const [open, setOpen] = useState(false); // Add open state for Sheet
   const pathname = usePathname();
 
   useEffect(() => {
@@ -80,18 +81,55 @@ export default function Header() {
         </ul>
         <ThemeToggle />
 
-        <Sheet>
+        <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger>
             <Menu className='md:hidden cursor-pointer' />
           </SheetTrigger>
           <SheetContent>
-            <SheetHeader>
-              <SheetTitle>Are you absolutely sure?</SheetTitle>
-              <SheetDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
-              </SheetDescription>
+            <SheetHeader className='mt-6'>
+              <Logo />
             </SheetHeader>
+
+            <ul className='items-start text-sm flex flex-col gap-6 p-4 pl-10'>
+              <li className='transition-colors hover:bg-accent py-1.5 px-3 rounded-md'>
+                <Link href='/' onClick={() => setOpen(false)}>
+                  Home
+                </Link>
+              </li>
+              <li className='transition-colors hover:bg-accent py-1.5 px-3 rounded-md'>
+                <Link href='/about' onClick={() => setOpen(false)}>
+                  About
+                </Link>
+              </li>
+              <li className='transition-colors hover:bg-accent py-1.5 px-3 rounded-md'>
+                <Link href='/blogs' onClick={() => setOpen(false)}>
+                  Blogs
+                </Link>
+              </li>
+              <li className='transition-colors hover:bg-accent py-1.5 px-3 rounded-md mr-4'>
+                <Link href='/contact' onClick={() => setOpen(false)}>
+                  Contact
+                </Link>
+              </li>
+              {/* <div className='flex items-center gap-3'>
+            <li className=''>
+              <Link
+                href='/login'
+                className={buttonVariants({ variant: 'outline' })}
+              >
+                Sign In
+              </Link>
+            </li>
+            <li className=''>
+              <Link
+                href='/register'
+                className={buttonVariants({ variant: 'default' })}
+              >
+                Register
+              </Link>
+            </li>
+          </div> */}
+            </ul>
           </SheetContent>
         </Sheet>
       </nav>
